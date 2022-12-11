@@ -1,0 +1,23 @@
+.containAll{
+
+   display: flex;
+  
+}
+.grid-container {
+
+    margin: 5px;
+  
+   
+
+
+
+}
+
+.grid-item {
+   
+   
+    border-style: solid;
+    border-color: black;
+    margin: 10px;
+   
+}

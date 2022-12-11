@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="body">
+  <div class="containAll"></div>
+  
+</body>
+<script>
+    
+
+   
+    createColumns(16);
+    
+
+
+    
+
+   
+
+   function createColumns(number){
+
+    for (let y = 1; y <= number; y++) {
+
+        
+
+        const maincontainer = document.querySelector('.containAll');
+        
+        const mainDiv = document.createElement('div');
+        mainDiv.classList.add('grid-container');
+       // mainDiv.textContent = "I'm a container";
+        
+        for (let i = 1; i < 17; i ++) {
+        const child = document.querySelector('.grid-container');
+
+        const children = document.createElement('div');
+        children.classList.add('grid-item');
+        children.textContent = i;
+        mainDiv.appendChild(children);
+
+        maincontainer.appendChild(mainDiv);
+    
+               
+
+                
+    }
+   }
+}
+
+
+   
+
+</script>
+</html>
