@@ -68,9 +68,19 @@ function clickCreate() {
 }
 
 function transform (e) {
+
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  
     const divNum = document.querySelector(`div[id="${e.target.id}"]`);
     if (!divNum) return;
     divNum.classList.add('transform');
+
+    divNum.style.borderColor = "#" + randomColor;
+    color.innerHTML = "#" + randomColor;
+}
+
+function clear(){
+    history.go(0);
 }
 
 
