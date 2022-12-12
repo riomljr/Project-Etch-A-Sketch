@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body class="body">
+    <div class="buttons">
+    <button onclick="adjust()">Adjust Grid</button>
+    <button onclick="clear()">Clear area</button>
+    </div>
   <div class="containAll"></div>
   
 </body>
@@ -15,7 +19,7 @@
     
 
    
-    createColumns(16);
+    
     
 
 
@@ -23,8 +27,8 @@
 
    
 
-   function createColumns(number){
-    idNum = 1;
+function createColumns(number){
+    let idNum = 1;
 
     for (let y = 1; y <= number; y++) {
 
@@ -32,32 +36,50 @@
         
         const mainDiv = document.createElement('div');
         mainDiv.classList.add('grid-container');
-       // mainDiv.textContent = "I'm a container";
         
-        for (let i = 1; i < 17; i ++) {
+        for (let i = 1; i < number; i ++) {
             const child = document.querySelector('.grid-container');
 
             const children = document.createElement('div');
-            children.classList.add('grid-item');
+            children.classList.add('griditem');
             children.setAttribute("id", idNum);
             children.textContent = i;
             mainDiv.appendChild(children);
 
             maincontainer.appendChild(mainDiv);   
             
-            idNum ++;
-            
+            idNum ++;        
     }
     idNum;
    }
 }
+function adjust() {
+   let user = prompt("How many squares would you like?")
+    if (isNaN(user)) return alert("Please only enter a number");
+    else if (user > 100) return alert("Maximum is 100 squares");
+    
+
+   createColumns(user);
+
+}
+function clear(){
+    
+    const box = document.querySelectorAll('.griditem');
+    box.forEach(griditem => griditem.addEventListener('transformend', removetrans));
+    
+    remove.classList.remove('.transform');
+
+}
+
 
 function transform (e) {
     const divNum = document.querySelector(`div[id="${e.target.id}"]`);
-    console.log(divNum);
+    //console.log(divNum);
     if (!divNum) return;
     divNum.classList.add('transform');
 }
+
+
 
 window.addEventListener('mouseover', transform);
    

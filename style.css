@@ -1,25 +1,33 @@
 .containAll{
 
    display: flex;
+   border-style: solid;
+   border-color: black;
+   justify-content: space-around;
+   background-color: black;
+   flex: 2;
+
+   
   
 }
 .grid-container {
-
-    margin: 5px;
-  
-   
-
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
 
 }
 
-.grid-item {
+.griditem {
    
-   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     border-style: solid;
     border-color: black;
+    transition: all 0.05s;
     margin: 10px;
-    transition: all 0.07s;
+    
    
 }
 .transform {
