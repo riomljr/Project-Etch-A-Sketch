@@ -1,19 +1,19 @@
 .containAll{
 
    display: flex;
-   border-style: solid;
-   border-color: black;
    justify-content: space-around;
    background-color: black;
-   flex: 2;
-
-   
+   align-items: stretch;
+   overflow-y: scroll;
+   margin-bottom: 100px;
   
 }
 .grid-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    flex: 1;
+    flex-shrink: 1;
+    
     
 
 }
@@ -21,18 +21,34 @@
 .griditem {
    
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
+    flex-direction: column;
     border-style: solid;
     border-color: black;
-    transition: all 0.05s;
-    margin: 10px;
+    padding-top: 75%;
+    flex: 1;
+    flex-shrink: 1;
     
-   
 }
+
 .transform {
 
     border-color: palevioletred;
     box-shadow: 0 0 10px rebeccapurple;
 
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+#adjust, #clear {
+    background-color: palevioletred;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
 }

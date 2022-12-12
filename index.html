@@ -9,79 +9,73 @@
 </head>
 <body class="body">
     <div class="buttons">
-    <button onclick="adjust()">Adjust Grid</button>
-    <button onclick="clear()">Clear area</button>
+    <button id="adjust" onclick="clickCreate()">Generate</button>
+    <button id="clear" type="button" onclick="history.go(0)">Clear area</button>
     </div>
-  <div class="containAll"></div>
+  <div id="mainContain" class="containAll"></div>
   
 </body>
 <script>
     
 
-   
-    
-    
-
-
-    
-
+function countDivs() {
+    const box = document.querySelector('#mainContain');
+    const allDivs = box.childElementCount;
+    return allDivs;
+}
    
 
-function createColumns(number){
+function createGrid(number){
+
     let idNum = 1;
 
     for (let y = 1; y <= number; y++) {
 
         const maincontainer = document.querySelector('.containAll');
-        
         const mainDiv = document.createElement('div');
         mainDiv.classList.add('grid-container');
-        
-        for (let i = 1; i < number; i ++) {
+
+        for (let i = 1; i <= number; i ++) {
             const child = document.querySelector('.grid-container');
 
             const children = document.createElement('div');
             children.classList.add('griditem');
             children.setAttribute("id", idNum);
-            children.textContent = i;
+            //children.textContent = '';
             mainDiv.appendChild(children);
 
             maincontainer.appendChild(mainDiv);   
             
             idNum ++;        
-    }
-    idNum;
+     }
+        idNum ++;
    }
 }
-function adjust() {
-   let user = prompt("How many squares would you like?")
+
+function clickCreate() {
+
+    let maxCount = countDivs();
+   
+    console.log(maxCount);
+    if (maxCount > 100)return alert("only 100 boxes max!");
+    else if (maxCount > 2) return alert("Please Clear area before proceeding!");
+     
+    let user = prompt("How many squares would you like?");
     if (isNaN(user)) return alert("Please only enter a number");
     else if (user > 100) return alert("Maximum is 100 squares");
-    
 
-   createColumns(user);
-
+    createGrid(user);
 }
-function clear(){
-    
-    const box = document.querySelectorAll('.griditem');
-    box.forEach(griditem => griditem.addEventListener('transformend', removetrans));
-    
-    remove.classList.remove('.transform');
-
-}
-
 
 function transform (e) {
     const divNum = document.querySelector(`div[id="${e.target.id}"]`);
-    //console.log(divNum);
     if (!divNum) return;
     divNum.classList.add('transform');
 }
 
 
-
-window.addEventListener('mouseover', transform);
+const container = document.querySelector('.containAll');
+container.addEventListener('mouseover', transform);
    
 
 </script>
