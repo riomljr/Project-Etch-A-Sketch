@@ -24,10 +24,9 @@
    
 
    function createColumns(number){
+    idNum = 1;
 
     for (let y = 1; y <= number; y++) {
-
-        
 
         const maincontainer = document.querySelector('.containAll');
         
@@ -36,23 +35,31 @@
        // mainDiv.textContent = "I'm a container";
         
         for (let i = 1; i < 17; i ++) {
-        const child = document.querySelector('.grid-container');
+            const child = document.querySelector('.grid-container');
 
-        const children = document.createElement('div');
-        children.classList.add('grid-item');
-        children.textContent = i;
-        mainDiv.appendChild(children);
+            const children = document.createElement('div');
+            children.classList.add('grid-item');
+            children.setAttribute("id", idNum);
+            children.textContent = i;
+            mainDiv.appendChild(children);
 
-        maincontainer.appendChild(mainDiv);
-    
-               
-
-                
+            maincontainer.appendChild(mainDiv);   
+            
+            idNum ++;
+            
     }
+    idNum;
    }
 }
 
+function transform (e) {
+    const divNum = document.querySelector(`div[id="${e.target.id}"]`);
+    console.log(divNum);
+    if (!divNum) return;
+    divNum.classList.add('transform');
+}
 
+window.addEventListener('mouseover', transform);
    
 
 </script>

@@ -19,5 +19,12 @@
     border-style: solid;
     border-color: black;
     margin: 10px;
+    transition: all 0.07s;
    
+}
+.transform {
+
+    border-color: palevioletred;
+    box-shadow: 0 0 10px rebeccapurple;
+
 }
