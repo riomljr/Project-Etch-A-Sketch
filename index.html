@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rio's Arcade</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body class="body">
     <div class="header">Rio's Arcade Etch-and-sketch</div>
     <div class="buttons">
-    <button id="adjust" onclick="clickCreate()">Generate</button>
+        <form name="Dot-Size" id='radio-buttons'>
+            <input type='radio' name='size' value='Big'>
+            <label for='blue'>Big</label><br>
+            <input type='radio' name='size' value='Normal'>
+            <label for='random1'>normal</label><br>
+            <input type='radio' name='size' value='Tiny'>
+            <label for='random2'>Tiny</label><br>
+        </form>
     <button id="clear"  onclick="reset()" >Clear area</button>
     </div>
     <div id="biggestContainer">
@@ -79,12 +86,29 @@ function reset(){
     });
 }
     
+function selection (e) {
+let formVal = e.target.value;
+if(!formVal) return;
+console.log(e.target.value);
+reset();
+switch(formVal) {
+    case 'Big': createGrid(10);
+    break;
+    case 'Normal': createGrid(30);
+    break;
+    case 'Tiny': createGrid(100);
+    break;
+}
 
+}
 
-createGrid(100);
+createGrid(16);
 
 const container = document.querySelector('.containAll');
 container.addEventListener('mouseover', transform);
+
+const radio = document.querySelector('#radio-buttons');
+window.addEventListener('click', selection)
    
 
 </script>

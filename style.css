@@ -1,4 +1,7 @@
 
+body{
+    /*background-color: black;*/
+}
 #biggestContainer{
 display: flex;
 justify-content: center;
@@ -9,9 +12,10 @@ justify-content: center;
     justify-content: center;
     color: red;
     font-size: 36px;
-    font-family: sans-serif;
+    font-family: 'Press Start 2P', cursive;
     margin: 10px;
     padding: 10px ;
+    text-shadow:  10px 0px 20px rgb(248, 15, 39);
 }
 .containAll{
     border-style: solid;
