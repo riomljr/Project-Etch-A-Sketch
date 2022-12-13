@@ -24,11 +24,11 @@
             <div class="size-select">
                 <div class="button-tittle"> Choose - Dot - Size:</div>
                 <form name="Dot-Size" id='radio-buttons'>
-                    <input type='radio' name='size' value='Big'/>
+                    <input type='radio' name='size' value='Big' onclick="radioSelection(8)"/>
                     <label for='blue'>Big</label>
-                    <input type='radio' name='size' value='Normal'/>
+                    <input type='radio' name='size' value='Normal' onclick="radioSelection(30)"/>
                     <label for='random1'>Normal</label>
-                    <input type='radio' name='size' value='Tiny'/>
+                    <input type='radio' name='size' value='Tiny' onclick="radioSelection(100)"/>
                     <label for='random2'>Tiny</label>
                 </form>
             <button id="clear" onclick="goBack()">Clear</button>
@@ -77,35 +77,22 @@ function reset(){
         box.parentNode.removeChild(box);
     });
 }
-//retrieves radio form selection
-function selection (e) {
-    let formVal = e.target.value;
-    if(!formVal) return;
-    console.log(e.target.value);
-    reset();
-    switch(formVal) {
-        case 'Big': createGrid(8);
-        break;
-        case 'Normal': createGrid(30);
-        break;
-        case 'Tiny': createGrid(100);
-        break;
-    }
-
-}
 //for clearAll button
-function goBack(){
+function radioSelection(number){
     reset();
-    createGrid(16);
+    createGrid(number);
+}
+//reset grid 
+function goBack(){
+    amount = document.querySelectorAll('.grid-container').length;
+    reset();
+    createGrid(amount);
 }
 
 createGrid(16);
 
 const container = document.querySelector('.containAll');
 container.addEventListener('mouseover', transform);
-
-const radio = document.querySelector('#radio-buttons');
-window.addEventListener('click', selection)
    
 
 </script>
