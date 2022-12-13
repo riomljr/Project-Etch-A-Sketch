@@ -8,35 +8,32 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body class="body">
-    <div class="header">Rio's Arcade Etch-and-sketch</div>
-    <div class="buttons">
-        <form name="Dot-Size" id='radio-buttons'>
-            <input type='radio' name='size' value='Big'>
-            <label for='blue'>Big</label><br>
-            <input type='radio' name='size' value='Normal'>
-            <label for='random1'>normal</label><br>
-            <input type='radio' name='size' value='Tiny'>
-            <label for='random2'>Tiny</label><br>
-        </form>
-    <button id="clear"  onclick="reset()" >Clear area</button>
-    </div>
-    <div id="biggestContainer">
-        <div id="mainContain" class="containAll"></div>
-    </div>
 
+    <div class="header">Rio's Arcade Etch-and-sketch</div>
+    <div class="options-container">
+        <div id="biggestContainer">
+            <div id="mainContain" class="containAll"></div>
+        </div>
+        <div class="buttons">
+            <div class="size-select">
+                <div class="button-tittle"> Choose Dot Size:</div>
+                <form name="Dot-Size" id='radio-buttons'>
+                    <input type='radio' name='size' value='Big'/>
+                    <label for='blue'>Big</label>
+                    <input type='radio' name='size' value='Normal'/>
+                    <label for='random1'>Normal</label>
+                    <input type='radio' name='size' value='Tiny'/>
+                    <label for='random2'>Tiny</label>
+                </form>
+            <button id="clear" onclick="goBack()"> Clear All</button>
+            </div>
+        </div>
+    </div>
   
 </body>
 <script>
-    
-
-function countDivs() {
-    const box = document.querySelector('#mainContain');
-    if(!box.childElementCount) return;
-    const allDivs = box.childElementCount;
-    return allDivs;
-}
-   
-
+ //functions  
+//creates grid
 function createGrid(number){
     let idNum = 1;
     for (let y = 1; y <= number; y++) {
@@ -57,18 +54,7 @@ function createGrid(number){
    }  
 }
 
-function clickCreate() {
-
-    let maxDivs = countDivs();
-    if ((maxDivs) > 100) return alert("only 100 boxes max allowed!");
-
-    let user = prompt("How many squares would you like?");
-    if (isNaN(user)) return alert("Please only enter a number");
-    else if (user > 100) return alert("Maximum is 100 squares");
-    reset();
-    createGrid(user);
-}
-
+//transforms dots color
 function transform (e) {
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
   
@@ -77,7 +63,7 @@ function transform (e) {
     divNum.style.borderColor = ("#" + randomColor);
     divNum.style.backgroundColor = ( "#" + randomColor);
 }
-
+//Removes all created divs
 function reset(){
     const boxs = document.querySelectorAll('.grid-container');
     let container = boxs.length;
@@ -85,21 +71,26 @@ function reset(){
         box.parentNode.removeChild(box);
     });
 }
-    
+//retrieves radio form selection
 function selection (e) {
-let formVal = e.target.value;
-if(!formVal) return;
-console.log(e.target.value);
-reset();
-switch(formVal) {
-    case 'Big': createGrid(10);
-    break;
-    case 'Normal': createGrid(30);
-    break;
-    case 'Tiny': createGrid(100);
-    break;
-}
+    let formVal = e.target.value;
+    if(!formVal) return;
+    console.log(e.target.value);
+    reset();
+    switch(formVal) {
+        case 'Big': createGrid(10);
+        break;
+        case 'Normal': createGrid(30);
+        break;
+        case 'Tiny': createGrid(100);
+        break;
+    }
 
+}
+//for clearAll button
+function goBack(){
+    reset();
+    createGrid(16);
 }
 
 createGrid(16);

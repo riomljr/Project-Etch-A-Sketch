@@ -1,6 +1,6 @@
 
 body{
-    /*background-color: black;*/
+    background-color: black;
 }
 #biggestContainer{
 display: flex;
@@ -12,10 +12,10 @@ justify-content: center;
     justify-content: center;
     color: red;
     font-size: 36px;
-    font-family: 'Press Start 2P', cursive;
-    margin: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 20px;
     padding: 10px ;
-    text-shadow:  10px 0px 20px rgb(248, 15, 39);
+   
 }
 .containAll{
     border-style: solid;
@@ -24,10 +24,9 @@ justify-content: center;
     max-width: 600px; 
     min-width: 600px;
     border: thick solid red;
-
     border-radius: 45px;
     padding: 12px;
-    box-shadow: 0px 0px 20px 10px rgb(245, 85, 93);
+    box-shadow: 0px 0px 15px 10px rgb(250, 70, 139);
   
 }
 .grid-container {
@@ -45,14 +44,35 @@ justify-content: center;
 .buttons {
     display: flex;
     justify-content: center;
-    margin: 20px;
-    padding: 10px;
-
 }
 
-#adjust, #clear {
-    background-color: rgb(246, 47, 63);
-    padding: 10px;
+ #clear {
+    background-color: rgb(18, 206, 231);
     font-weight: bold;
+    border-radius: 20px;
     color: white;
+
 }
+
+.size-select {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    box-shadow: 0px 0px 10px 0px rgb(144, 240, 234);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 40px;
+    gap: 5px;
+
+}
+.options-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.button-tittle {
+    display: flex;
+    justify-content: center;
+}
+
+
