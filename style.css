@@ -1,39 +1,45 @@
 
-:root {
-    --grid-cols: 1;
-    --grid-rows: 1;
+@import url('https://fonts.cdnfonts.com/css/arcade-classic');
 
+#biggestContainer{
+display: flex;
+justify-content: center;
 }
 
-
+.header {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 36px;
+    font-family: sans-serif;
+    margin: 10px;
+    padding: ;
+}
 .containAll{
- 
     border-style: solid;
     padding: 10px;
     background-color: black;  
-   
-   
+    max-width: 600px; 
+    min-width: 600px;
+    border: thick solid red;
+
+    border-radius: 45px;
+    padding: 12px;
   
 }
 .grid-container {
-    display: flex;
-  
-    
+    display: flex;   
 }
 
 .griditem {
     aspect-ratio: 1/1;
     display: flex;
     border-style: solid;
-   flex:1;
-   
-   
-  
-    
+   flex:1; 
+   border-radius: 100px;
 }
 
 .grid-item {
-
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -42,7 +48,6 @@
     padding-top: 75%;
     flex: 1;
     flex-shrink: 1;
-
 }
 
 
@@ -55,7 +60,7 @@
 }
 
 #adjust, #clear {
-    background-color: palevioletred;
+    background-color: rgb(246, 47, 63);
     padding: 10px;
     font-weight: bold;
     color: white;
