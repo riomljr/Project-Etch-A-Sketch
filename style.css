@@ -1,25 +1,39 @@
-.containAll{
 
-   display: flex;
-   justify-content: space-around;
-   background-color: black;
-   align-items: stretch;
-   overflow-y: scroll;
-   margin-bottom: 100px;
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+
+}
+
+
+.containAll{
+ 
+    border-style: solid;
+    padding: 10px;
+    background-color: black;  
+   
+   
   
 }
 .grid-container {
     display: flex;
-    flex-direction: column;
-    flex: 1;
-    flex-shrink: 1;
+  
     
-    
-
 }
 
 .griditem {
+    aspect-ratio: 1/1;
+    display: flex;
+    border-style: solid;
+   flex:1;
    
+   
+  
+    
+}
+
+.grid-item {
+
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -28,15 +42,9 @@
     padding-top: 75%;
     flex: 1;
     flex-shrink: 1;
-    
-}
-
-.transform {
-
-    border-color: palevioletred;
-    box-shadow: 0 0 10px rebeccapurple;
 
 }
+
 
 .buttons {
     display: flex;

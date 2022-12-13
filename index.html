@@ -10,9 +10,11 @@
 <body class="body">
     <div class="buttons">
     <button id="adjust" onclick="clickCreate()">Generate</button>
-    <button id="clear" type="button" onclick="history.go(0)">Clear area</button>
+    <button id="clear"  onclick="reset()" >Clear area</button>
     </div>
-  <div id="mainContain" class="containAll"></div>
+    
+    <div id="mainContain" class="containAll"></div>
+
   
 </body>
 <script>
@@ -20,6 +22,7 @@
 
 function countDivs() {
     const box = document.querySelector('#mainContain');
+    if(!box.childElementCount) return;
     const allDivs = box.childElementCount;
     return allDivs;
 }
@@ -27,62 +30,70 @@ function countDivs() {
 
 function createGrid(number){
 
+
     let idNum = 1;
-
     for (let y = 1; y <= number; y++) {
-
         const maincontainer = document.querySelector('.containAll');
         const mainDiv = document.createElement('div');
         mainDiv.classList.add('grid-container');
-
         for (let i = 1; i <= number; i ++) {
             const child = document.querySelector('.grid-container');
-
             const children = document.createElement('div');
             children.classList.add('griditem');
             children.setAttribute("id", idNum);
-            //children.textContent = '';
+            children.textContent = '';
             mainDiv.appendChild(children);
-
+        
             maincontainer.appendChild(mainDiv);   
             
             idNum ++;        
      }
         idNum ++;
    }
+   
 }
 
 function clickCreate() {
 
-    let maxCount = countDivs();
-   
-    console.log(maxCount);
-    if (maxCount > 100)return alert("only 100 boxes max!");
-    else if (maxCount > 2) return alert("Please Clear area before proceeding!");
-     
+    let maxDivs = countDivs();
+    if ((maxDivs) > 100) return alert("only 100 boxes max allowed!");
+
     let user = prompt("How many squares would you like?");
     if (isNaN(user)) return alert("Please only enter a number");
     else if (user > 100) return alert("Maximum is 100 squares");
-
+    reset();
     createGrid(user);
 }
 
 function transform (e) {
+    
 
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
   
-    const divNum = document.querySelector(`div[id="${e.target.id}"]`);
-    if (!divNum) return;
-    divNum.classList.add('transform');
-
-    divNum.style.borderColor = "#" + randomColor;
-    color.innerHTML = "#" + randomColor;
+    const divNum = container.querySelector(`div[id="${e.target.id}"]`);
+    if(!divNum) return;
+    divNum.style.borderColor = ("#" + randomColor);
+    divNum.style.backgroundColor = ( "#" + randomColor);
 }
 
-function clear(){
-    history.go(0);
-}
+function reset(){
 
+    const boxs = document.querySelectorAll('.grid-container');
+   let container = boxs.length;
+    boxs.forEach( box => {
+        box.parentNode.removeChild(box);
+    });
+    
+    
+
+    console.log(boxs);
+
+
+}
+    
+
+
+createGrid(100);
 
 const container = document.querySelector('.containAll');
 container.addEventListener('mouseover', transform);
