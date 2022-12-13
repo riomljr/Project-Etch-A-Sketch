@@ -31,8 +31,6 @@ function countDivs() {
    
 
 function createGrid(number){
-
-
     let idNum = 1;
     for (let y = 1; y <= number; y++) {
         const maincontainer = document.querySelector('.containAll');
@@ -45,14 +43,11 @@ function createGrid(number){
             children.setAttribute("id", idNum);
             children.textContent = '';
             mainDiv.appendChild(children);
-        
             maincontainer.appendChild(mainDiv);   
-            
             idNum ++;        
      }
         idNum ++;
-   }
-   
+   }  
 }
 
 function clickCreate() {
@@ -68,8 +63,6 @@ function clickCreate() {
 }
 
 function transform (e) {
-    
-
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
   
     const divNum = container.querySelector(`div[id="${e.target.id}"]`);
@@ -79,18 +72,11 @@ function transform (e) {
 }
 
 function reset(){
-
     const boxs = document.querySelectorAll('.grid-container');
-   let container = boxs.length;
+    let container = boxs.length;
     boxs.forEach( box => {
         box.parentNode.removeChild(box);
     });
-    
-    
-
-    console.log(boxs);
-
-
 }
     
 
