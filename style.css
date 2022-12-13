@@ -11,8 +11,8 @@ justify-content: center;
     display: flex;
     justify-content: center;
     color: red;
-    font-size: 36px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 46px;
+    font-family: 'ArcadeClassic', sans-serif;                                  
     margin: 20px;
     padding: 10px ;
    
@@ -44,6 +44,7 @@ justify-content: center;
 .buttons {
     display: flex;
     justify-content: center;
+
 }
 
  #clear {
@@ -51,6 +52,7 @@ justify-content: center;
     font-weight: bold;
     border-radius: 20px;
     color: white;
+    font-family: 'ArcadeClassic', sans-serif; 
 
 }
 
@@ -69,6 +71,7 @@ justify-content: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: 'ArcadeClassic', sans-serif; 
 }
 .button-tittle {
     display: flex;
