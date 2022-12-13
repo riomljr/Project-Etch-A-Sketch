@@ -11,8 +11,8 @@ justify-content: center;
     display: flex;
     justify-content: center;
     color: red;
-    font-size: 36px;
-    font-family: 'Press Start 2P', sans-serif;                                
+    font-size: 50px;
+    font-family: 'ArcadeClassic', sans-serif;                              
     margin: 20px;
     padding: 10px ;
    
@@ -52,8 +52,7 @@ justify-content: center;
     font-weight: bold;
     border-radius: 20px;
     color: white;
-    font-family:'Press Start 2P', sans-serif;
-
+    font-family: 'ArcadeClassic', sans-serif;
 }
 
 .size-select {
@@ -71,7 +70,7 @@ justify-content: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: 'ArcadeClassic', sans-serif;
 }
 .button-tittle {
     display: flex;
